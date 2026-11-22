@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://estimappart75.fr/sitemap.xml
