@@ -270,6 +270,10 @@ details ~ p:has(> .btn:only-child) { margin-top: clamp(3rem, 6vw, 4.5rem); }
 .source a { color: var(--soft); text-decoration-color: rgba(102, 112, 133, .45); text-decoration-thickness: 1px; }
 .source a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
+/* Pages d'arrondissement : on resserre l'espace entre le bouton du haut et « Le X arrondissement en bref » */
+.hero:has(.btn[href*="?arr="]) { padding-bottom: clamp(1rem, 2vw, 1.5rem); }
+.hero:has(.btn[href*="?arr="]) + section { padding-top: clamp(2rem, 4vw, 3rem); }
+
 /* ---------- Mobile ---------- */
 @media (max-width: 860px) {
   header { padding: .6rem .6rem 0; }
