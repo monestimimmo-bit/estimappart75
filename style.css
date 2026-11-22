@@ -168,14 +168,14 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
 .chips li:hover { background: var(--blush); border-color: transparent; transform: translateY(-2px); }
 
 /* ---------- FAQ ---------- */
-details { background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 0 1.7rem; margin-bottom: .8rem; transition: border-color .3s, box-shadow .4s; }
+details { background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 0 1.9rem; margin-bottom: 1.1rem; transition: border-color .3s, box-shadow .4s; }
 details:hover { box-shadow: 0 18px 36px -24px rgba(16, 24, 40, .3); }
 details[open] { border-color: var(--accent); }
-summary { cursor: pointer; font: 700 1.15rem/1.3 var(--display); letter-spacing: -.025em; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.3rem 0; }
+summary { cursor: pointer; font: 700 1.15rem/1.3 var(--display); letter-spacing: -.025em; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.6rem 0; }
 summary::-webkit-details-marker { display: none; }
 summary::after { content: "+"; flex: none; display: grid; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 50%; background: var(--blush); color: var(--accent); font: 600 1.4rem/1 var(--sans); transition: transform .5s var(--spring), background .3s, color .3s; }
 details[open] summary::after { transform: rotate(135deg); background: var(--accent); color: #fff; }
-details p { margin: 0; padding-bottom: 1.4rem; color: var(--text); }
+details p { margin: 0; padding-bottom: 1.7rem; color: var(--text); }
 details[open] p { animation: fade .5s var(--ease) both; }
 details::details-content { block-size: 0; overflow: hidden; transition: block-size .45s var(--ease), content-visibility .45s allow-discrete; }
 details[open]::details-content { block-size: auto; }
@@ -250,6 +250,25 @@ footer .wrap { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: spa
 /* ---------- Bandeau cookies ---------- */
 #tarteaucitronRoot div#tarteaucitronAlertBig { background: var(--ink) !important; font-family: var(--sans) !important; }
 #tarteaucitronRoot #tarteaucitronAlertBig #tarteaucitronPersonalize2 { background: var(--accent) !important; border-radius: 999px !important; }
+
+/* ---------- Respiration : boutons d'appel à l'action, FAQ, blog ---------- */
+/* Bouton seul dans son paragraphe (accueil, arrondissements, FAQ) : plus d'air au-dessus */
+p:has(> .btn:only-child) { margin: clamp(2.2rem, 4vw, 3rem) 0 0; }
+.hero p:has(> .btn:only-child) { margin-top: clamp(2.2rem, 4vw, 3rem); }
+/* Bouton de la bande orange (fin des articles) */
+.cta-band p { margin-bottom: 1.8rem; }
+/* FAQ : titre plus dégagé, et bouton nettement plus bas que la dernière question */
+h2 + details { margin-top: 2.2rem; }
+details ~ p:has(> .btn:only-child) { margin-top: clamp(3rem, 6vw, 4.5rem); }
+.alt:has(details) { padding-bottom: clamp(4.5rem, 9vw, 7rem); }
+/* Blog : on resserre le vide entre l'introduction et les cartes d'articles */
+.hero:has(+ section > .wrap > .cards:first-child) { padding-bottom: clamp(1.2rem, 3vw, 2rem); }
+.hero + section:has(> .wrap > .cards:first-child) { padding-top: 0; }
+.hero + section > .wrap > .cards:first-child { margin-top: 0; }
+/* Mention de source sous une donnée chiffrée */
+.source { margin: -.2rem 0 0; font-size: .88rem; color: var(--soft); text-align: left; text-align-last: auto; }
+.source a { color: var(--soft); text-decoration-color: rgba(102, 112, 133, .45); text-decoration-thickness: 1px; }
+.source a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 860px) {
